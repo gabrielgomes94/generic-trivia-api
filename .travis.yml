@@ -1,0 +1,10 @@
+language: ruby
+cache: bundler
+before_install:
+  - cp config/database.yml.example config/database.yml
+rvm:
+  - 2.5.1
+script:
+  - bundle exec rake db:create db:migrate
+  - bundle exec rspec
+
